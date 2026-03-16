@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale=1.0, user-scalable=no">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/706/706164.png">
     <title>Tu Restaurante - Navegación Intuitiva</title>
 
@@ -65,13 +65,17 @@
             background: #000;
             border-color: #D4AF37; /* Borde más oro */
             color: #fff;
-            justify-content: center; /* Centra el contenido verticalmente */
+            display: flex;
+            justify-content:space-between; /* center Centra el contenido verticalmente */
+            align-items: center;
+            padding: 40px 20px;
             cursor: pointer; /* Indica que se puede hacer click */
         }
 
         .foto-portada-placeholder {
             width: 100%;
-            height: 250px;
+            height: 60vh;/* Bajamos la altura al 60% de la pantalla para que no empuje todo hacia abajo */
+             display: flex;
             border: 1px solid #c5a059;
             background-color: #1a1a1a;
             color: #804A00;
@@ -82,7 +86,11 @@
             font-size: 0.8rem;
             text-align: center;
         }
-
+        .foto-portada-placeholder img {
+            max-width: 100%;/*se cambia el tamaño de la imagen de portada*/
+            max-height: 100%;
+            object-fit: contain; /* CLAVE: Esto hace que el plato y cubiertos se vean ENTEROS sin cortarse */   
+        }
         .titulo-portada {
             color: #D4AF37; /* Oro brillante */
             font-size: 2.2rem;
